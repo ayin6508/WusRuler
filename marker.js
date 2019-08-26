@@ -201,7 +201,7 @@ if (document.getElementById("pageMarker_canvas") && document.getElementById("pag
       flag = true;
     }
     if (res == 'up' || res == "out") {
-      if (ratio <= 0) {
+      if (ratio <= 0 && res == 'up') {
         erase();
         currX = e.pageX - canvas.offsetLeft;
         currY = e.pageY - canvas.offsetTop;
