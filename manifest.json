@@ -1,0 +1,24 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icon.png",
+      "default_title": "Page Marker"
+   },
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+   "description": "Draw directly on any website in realtime without the hassle of taking a screenshot!",
+   "icons": {
+      "128": "image.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiI97dS0lyK9ow4mxGDvr/Wy9VTNEWsLbgBz+alHqZXLn/1g7jnTVV5TviZEmrGmy7Vf4XemJScV3oM3+adCypYrryGfHvQq8tyHWvtG/NuOy3KvsA2jEi1jXfirQQJnXsSoIVIVUhIIhocwSC4FwU8UDb12sgTN5asyNDg5sBdhgHESlRPFkFt2Ho86TGUADYfmQg8PkdqnOo889+UXl452wUkkmho+3Pih4PZTYwORSvlNUyYsNRA7AXMcAwahg1VYMpi0DSSl0OLUa7pCcwWBcbe8aTucmbebEIEsWkHyzyNebmh6TTMlHdlUw7t4FTJCiEh4uKdbPIv1tDUQqvwIDAQAB",
+   "manifest_version": 2,
+   "name": "Page Marker",
+   "offline_enabled": true,
+   "options_page": "options.html",
+   "permissions": [ "activeTab", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.8",
+   "web_accessible_resources": [ "pen.png", "eraser.png", "save.png", "pointer.png", "main.css" ]
+}

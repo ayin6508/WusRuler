@@ -1,0 +1,122 @@
+#pageMarker_draggable {
+  box-sizing: content-box!important;
+  line-height:0.7!important;
+  cursor: move!important;
+  height: 186px!important;
+  width: 138px!important;
+  border-color: #ffffff!important;
+  background-color: #ffffff!important;
+  box-shadow: rgb(94, 94, 94) 0px 0px 20px!important;
+  border-style: solid!important;
+  border-width: 5px!important;
+  border-radius: 10px!important;
+  margin: 20px!important;
+  padding: 5px!important;
+  position: absolute!important;
+  right: 0px!important;
+  z-index: 2147483647!important;
+  user-select: none!important;
+  display: block;
+  text-align: left!important;
+}
+
+#pageMarker_thicknessSlider {
+  outline: none;
+  -webkit-appearance: slider-horizontal;
+  border: 0px;
+  margin: 5px;
+  width: 120px;
+  padding: 3px;
+  border-radius: 5px;
+  height: auto!important;
+  background: #d7dcdf;
+}
+
+#pageMarker_colorSelect {
+  height: 40px;
+  border-radius: 2px;
+  width: 99%;
+  border: 0px !important;
+  background-color: #ffffff;
+  padding: 0px;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 0;
+}
+
+#pageMarker_colorSelect:focus {
+  outline: none!important;
+}
+
+#pageMarker_canvas {
+  cursor: crosshair;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  z-index: 2147483646;
+  background-color: transparent;
+  user-select: none;
+}
+
+.pageMarker_title {
+  color: #808080;
+  font-size: 10px;
+  font-family: Helvetica!important;
+  margin: 4px 0px 2px 0px;
+  text-transform: uppercase;
+  font-weight: 800;
+  user-select: none;
+  clear: none;
+}
+
+.pageMarker_button {
+  font-style: normal!important;
+  margin: 5px 2px 0px 2px!important;
+  display: inline!important;
+  box-shadow: none!important;
+  font-family: 'Helvetica'!important;
+  font-weight: 800!important;
+  font-size: 12px!important;
+  line-height: 30px!important;
+  text-transform: uppercase!important;
+  background: white!important;
+  color: grey!important;
+  border: 1px solid grey!important;
+  border-radius: 10px!important;
+  width: 65px!important;
+  padding: 0 11px!important;
+  cursor: pointer!important;
+  height: auto!important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none!important;
+  outline: none!important;
+  position: relative!important;
+  z-index: 2;
+  box-sizing: border-box!important;
+  transition: none!important;
+}
+
+.pageMarker_icon {
+  padding: 0px;
+  width: 21px!important;
+  height: 20px!important;
+}
+
+#pageMarker_pen, #pageMarker_eraser, #pageMarker_save, #pageMarker_pointer {
+  display: inline-block;
+  box-sizing: content-box;
+  margin: 5px 0px 2px 2px;
+  padding: 6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#pageMarker_pen, #pageMarker_eraser, #pageMarker_save:hover, #pageMarker_pen, #pageMarker_eraser, #pageMarker_save:active {
+  color: #000000!important;
+  border-bottom: none!important;
+}

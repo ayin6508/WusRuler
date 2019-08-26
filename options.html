@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head><title>Page Marker Options</title></head>
+<style>
+html,body {
+  margin: 0;
+  padding: 0;
+}
+.pageMarker {
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  text-align: center;
+}
+h1 {
+  font-weight: 800;
+  font-size: 25px;
+  user-select: none;
+  clear: none;
+  font-family: Helvetica !important;
+  margin: 5px 0px 2px;
+}
+h3 {
+  font-weight: 800;
+  user-select: none;
+  clear: none;
+  font-family: Helvetica !important;
+  margin: 30px 0px 2px;
+}
+.donate {
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#val p {
+  margin-top: 0px;
+  vertical-align: middle;
+  font-family: Helvetica !important;
+}
+
+#saved {
+  font-family: Helvetica !important;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="main.css">
+<body>
+  <div class="pageMarker">
+    <h1>Page Marker</h1>
+    <h3>Default color:</h3>
+    <input id="pageMarker_colorSelect" name="color" type="color">
+    <h3>Default thickness:</h3>
+    <input type="range" id="pageMarker_thicknessSlider" max="40" min="1">
+    <div id="val"><p id="px"></p></div>
+    <div id="status"><p id="saved"></p></div>
+    <button id="save">Save</button>
+  </div>
+  <div class="donate">
+    <p style="font-size:20px">Thank you for using Page Marker!<br><br>I'm a high school student, and I created this project on my own.<br>You can make a small donation (as little as you want) to help me continue updating this project.</p>
+    <form id="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" style="height:60px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+
+  </div>
+<script src="jquery.min.js"></script>
+<script src="options.js"></script>
+</body>
+</html>
