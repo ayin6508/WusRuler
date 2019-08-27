@@ -11,6 +11,22 @@ if (document.getElementById("pageMarker_canvas") && document.getElementById("pag
   canvas.width = document.body.clientWidth;
   canvas.height = $(document).height();
   document.body.appendChild(canvas);
+
+
+  var cursorCanvas = document.createElement("canvas");
+  cursorCanvas.id = "cursor_canvas";
+  cursorCanvas.width = 10;
+  cursorCanvas.height = 10;
+  // document.body.appendChild(canvas);
+
+  var ctx1 = cursorCanvas.getContext('2d');
+  
+  ctx1.beginPath();
+  ctx1.fillStyle = pen_color;
+  ctx1.arc(5,5,2,0,Math.PI*2,false);
+  ctx1.fill();
+  canvas.style.cursor = 'url(' + cursorCanvas.toDataURL() + ') 0 0, auto';
+
   var draggable = document.createElement("div");
   draggable.id = "pageMarker_draggable";
   document.body.appendChild(draggable);
@@ -102,6 +118,7 @@ if (document.getElementById("pageMarker_canvas") && document.getElementById("pag
     var color = pen_color;
     var thickness = pen_thickness;
     ctx.beginPath();
+    ctx.setLineDash([]);
     ctx.globalCompositeOperation = "source-over";
     ctx.lineWidth = thickness;
     ctx.strokeStyle = color;
@@ -110,6 +127,27 @@ if (document.getElementById("pageMarker_canvas") && document.getElementById("pag
     ctx.lineTo(currX, currY);
     ctx.closePath();
     ctx.stroke();
+
+    ctx.beginPath();
+    ctx.setLineDash([3, 3]);
+    ctx.lineWidth = thickness;
+    ctx.strokeStyle = "#9F707070";
+    ctx.lineJoin = "round";
+    ctx.moveTo(currX, 0);
+    ctx.lineTo(currX, canvas.height - 0.1);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3, 3]);
+    ctx.lineWidth = thickness;
+    ctx.strokeStyle = "#9F707070";
+    ctx.lineJoin = "round";
+    ctx.moveTo(0, currY);
+    ctx.lineTo(canvas.width - 0.1, currY);
+    ctx.stroke();
+    ctx.closePath();
+    
     ctx.font = "12px Arial";
     ctx.fillStyle = pen_color;
     var text = "标尺未设置";
@@ -125,7 +163,8 @@ if (document.getElementById("pageMarker_canvas") && document.getElementById("pag
         drawX = currX - 80;
       }
     }
-    ctx.fillText(text, drawX, currY + 5);
+    ctx.fillText(text, drawX, currY + 15);
+
   }
 
   function drawTouch(x, y) {
@@ -203,15 +242,15 @@ if (document.getElementById("pageMarker_canvas") && document.getElementById("pag
   function findxy(res, e) {
     if (res == 'down') {
       erase();
-      prevX = e.pageX - canvas.offsetLeft;
-      prevY = e.pageY - canvas.offsetTop;
+      prevX = e.pageX - canvas.offsetLeft +4;
+      prevY = e.pageY - canvas.offsetTop+5;
       flag = true;
     }
     if (res == 'up' || res == "out") {
       if (ratio <= 0 && res == 'up') {
         erase();
-        currX = e.pageX - canvas.offsetLeft;
-        currY = e.pageY - canvas.offsetTop;
+        currX = e.pageX - canvas.offsetLeft+4;
+        currY = e.pageY - canvas.offsetTop+5;
         var len = lineDistance();
         ratio = len / stantard;
         draw();
@@ -221,8 +260,8 @@ if (document.getElementById("pageMarker_canvas") && document.getElementById("pag
     if (res == 'move') {
       if (flag) {
         erase();
-        currX = e.pageX - canvas.offsetLeft;
-        currY = e.pageY - canvas.offsetTop;
+        currX = e.pageX - canvas.offsetLeft+4;
+        currY = e.pageY - canvas.offsetTop+5;
         draw();
       }
     }
