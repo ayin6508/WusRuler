@@ -112,13 +112,20 @@ if (document.getElementById("pageMarker_canvas") && document.getElementById("pag
     ctx.stroke();
     ctx.font = "12px Arial";
     ctx.fillStyle = pen_color;
-    if (ratio <= 0) {
-      ctx.fillText("标尺未设置", currX + 10, currY + 5);
-    } else {
+    var text = "标尺未设置";
+    if (ratio > 0) {
       var len = lineDistance();
       var mm = len/ ratio;
-      ctx.fillText(mm.toFixed(2)+"mm", currX + 10, currY + 5);
+      text = mm.toFixed(2)+"mm";
     }
+    var drawX = currX + 10;
+    if (prevX>currX) {
+      drawX = currX - 60;
+      if (ratio<=0) {
+        drawX = currX - 80;
+      }
+    }
+    ctx.fillText(text, drawX, currY + 5);
   }
 
   function drawTouch(x, y) {
